@@ -1,0 +1,721 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{amsthm}% http://ctan.org/pkg/amsthm
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+
+\theoremstyle{definition}
+\ifx\thechapter\undefined
+  \newtheorem{examplex}{\protect\examplename}
+\else
+  \newtheorem{examplex}{\protect\examplename}[chapter]
+\fi
+\newenvironment{example}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex}
+  {\popQED\endexamplex}
+\theoremstyle{plain}
+\ifx\thechapter\undefined
+  \newtheorem{factx}{\protect\factname}
+\else
+  \newtheorem{factx}{\protect\factname}[chapter]
+\fi
+\newenvironment{fact}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\blacksquare$}\factx}
+  {\popQED\endfactx}
+\theoremstyle{definition}
+\ifx\thechapter\undefined
+  \newtheorem{defnx}{\protect\definitionname}
+\else
+  \newtheorem{defnx}{\protect\definitionname}[chapter]
+\fi
+\newenvironment{defn}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\Box$}\defnx}
+  {\popQED\enddefnx}
+\theoremstyle{plain}
+\ifx\thechapter\undefined
+  \newtheorem{thmx}{\protect\theoremname}
+\else
+  \newtheorem{thmx}{\protect\theoremname}[chapter]
+\fi
+\newenvironment{thm}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\circ$}\thmx}
+  {\popQED\endthmx}
+
+\providecommand{\definitionname}{Definition}
+\providecommand{\examplename}{Example}
+\providecommand{\factname}{Fact}
+\providecommand{\theoremname}{Theorem}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Differentialgleichungen
+\end_layout
+
+\begin_layout Section
+Phänomenologie
+\end_layout
+
+\begin_layout Subsection
+Die logarithmische Spirale
+\end_layout
+
+\begin_layout Standard
+Welche differenzierbaren und regulären Kurven in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ schneiden alle Geraden durch den Ursprung stets unter dem gleichen Winkel
+ 
+\begin_inset Formula $\alpha\notin\{0,\pi\}$
+\end_inset
+
+? Dies impliziert strenge Monotonie im Argument von 
+\begin_inset Formula $\gamma(t)$
+\end_inset
+
+, 
+\begin_inset Formula $\gamma(t)=r(t)(\cos t\:\sin t)^{T}$
+\end_inset
+
+.
+ Der Winkel zwischen 
+\begin_inset Formula $\gamma(t)$
+\end_inset
+
+ und 
+\begin_inset Formula $\dot{\gamma}(t)$
+\end_inset
+
+ ist
+\begin_inset Formula 
+\[
+\frac{\langle\gamma(t),\dot{\gamma}(t)\rangle}{|\gamma(t)|\cdot|\dot{\gamma}(t)|}=\cos\alpha\Leftrightarrow\frac{\dot{r}(t)}{\sqrt{r^{2}+\dot{r}^{2}}}=\cos\alpha
+\]
+
+\end_inset
+
+mit 
+\begin_inset Formula $\dot{\gamma}(t)=\dot{r}(t)(\cos t\:\sin t)^{T}+r(t)(-\sin t\:\cos t)$
+\end_inset
+
+ und 
+\begin_inset Formula $\langle\gamma,\dot{\gamma}\rangle=r\dot{r}$
+\end_inset
+
+.
+ Spezialfall: 
+\begin_inset Formula $\cos\alpha=0\implies\dot{r}\equiv0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nehmen wir an, dass 
+\begin_inset Formula $\cos\alpha\neq0$
+\end_inset
+
+, d.h.
+ in allen anderen Fällen 
+\begin_inset Formula $\dot{r}(t)=\alpha r(t)$
+\end_inset
+
+ mit 
+\begin_inset Formula $a=\tan\alpha$
+\end_inset
+
+, dann erhalten wir eine lineare gewöhnliche Differentialgleichung erster
+ Ordnung.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{thm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es sei 
+\begin_inset Formula $a\in\mathbb{C}$
+\end_inset
+
+ und 
+\begin_inset Formula $x:[\alpha,\beta]\to\mathbb{C}$
+\end_inset
+
+ eine differenzierbare Funktion mit 
+\begin_inset Formula $\dot{x}(t)=ax(t)$
+\end_inset
+
+ für alle 
+\begin_inset Formula $t\in[\alpha,\beta]$
+\end_inset
+
+.
+ Dann gibt es eine Konstante 
+\begin_inset Formula $c\in\mathbb{C}$
+\end_inset
+
+ mit 
+\begin_inset Formula $x(t)=c\cdot e^{at}$
+\end_inset
+
+, 
+\begin_inset Formula $t\in\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{thm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Hinweise zum 1.
+ Übungblatt
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $f:V\to\mathbb{R}$
+\end_inset
+
+ differenzierbar mit 
+\begin_inset Formula $V$
+\end_inset
+
+ endlich-dimensionaler, normierter, reeller Vektorraum, 
+\begin_inset Formula $V=\mathbb{R}^{n\times n}$
+\end_inset
+
+.
+ Dann ist die Ableitung von 
+\begin_inset Formula $f$
+\end_inset
+
+ ausgewertet in 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\begin_inset Formula $Df(x):V\to\mathbb{R},h\mapsto Df(x)\cdot h$
+\end_inset
+
+.
+ 
+\begin_inset Formula $Df(x)\cdot h$
+\end_inset
+
+ ist die Richtungsableitung von 
+\begin_inset Formula $f$
+\end_inset
+
+ ausgewertet in 
+\begin_inset Formula $x$
+\end_inset
+
+ in Richtung 
+\begin_inset Formula $h$
+\end_inset
+
+.
+ Dann ist 
+\begin_inset Formula $Df:V\to d(V,\mathbb{R}),x\mapsto Df(x)$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+Df(x)\cdot h=\frac{d}{d\varepsilon}f(x+\varepsilon h)|_{\varepsilon=0}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{example}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $g:\mathbb{R}^{n}\to\mathbb{R},[x_{1},...,x_{n}]^{T}=x\mapsto g(x)$
+\end_inset
+
+.
+ Dann ist 
+\begin_inset Formula $\frac{\partial}{\partial x_{i}}g(x)=Dg(x)\cdot[0\:0\;...\:1\:...\:0\:0]=$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{example}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Das 
+\begin_inset Formula $n$
+\end_inset
+
+-Körperproblem
+\end_layout
+
+\begin_layout Standard
+Es seien 
+\begin_inset Formula $n$
+\end_inset
+
+ Körper (Massepunkte) 
+\begin_inset Formula $k_{1},...,k_{n}$
+\end_inset
+
+ im 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+ gegeben.
+ Die Körper haben die Massen 
+\begin_inset Formula $m_{1},...,m_{n}$
+\end_inset
+
+.
+ Die Gravitationskraft, die die 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ auf 
+\begin_inset Formula $k_{j}$
+\end_inset
+
+ ausüben ist gegeben durch 
+\begin_inset Formula $-\sum_{h\neq j}gm_{j}m_{k}\frac{x_{j}(t)-x_{k}(t)}{|x_{j}(t)-x_{k}(t)|^{3}}$
+\end_inset
+
+.
+ Wir erhalten 
+\begin_inset Formula $n$
+\end_inset
+
+ Gleichungen der Form 
+\begin_inset Formula 
+\begin{equation}
+m_{j}x_{j}^{''}=-\sum_{h\neq j}gm_{j}m_{k}\frac{x_{j}(t)-x_{k}(t)}{|x_{j}(t)-x_{k}(t)|^{3}}\label{eq:1.1}
+\end{equation}
+
+\end_inset
+
+ für 
+\begin_inset Formula $j=1,...,n$
+\end_inset
+
+.
+ Im Fall 
+\begin_inset Formula $n=2$
+\end_inset
+
+ und 
+\begin_inset Formula $k_{1}$
+\end_inset
+
+immer im Ursprung des 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+, d.h.
+ 
+\begin_inset Formula $x_{1}(t)\equiv0$
+\end_inset
+
+ erhalten wir mit 
+\begin_inset Formula $x(t):=x_{2}(t)$
+\end_inset
+
+ die Gleichung 
+\begin_inset Formula 
+\begin{equation}
+x''(t)=-gm_{1}\frac{x(t)}{|x(t)|^{3}}.\label{eq:1.2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Räuber-Beute-Modell
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ die größe der Beutepopulation, sei 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ die Größte der Räuberpopulation, jeweils zur Zeit 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ Wir modellieren 
+\begin_inset Formula $x'=ax$
+\end_inset
+
+ mit 
+\begin_inset Formula $0<a\in\mathbb{R}$
+\end_inset
+
+ für den Fall von null Räubern.
+ Für mehr als null Räuber ist die Anzahl der Aufeinandertreffen zwischen
+ Beute und Räuber ist proportional zu 
+\begin_inset Formula $x(t)\cdot y(t)$
+\end_inset
+
+.
+ Daher 
+\begin_inset Formula $x'=ax-bxy$
+\end_inset
+
+ mit 
+\begin_inset Formula $0<b\in\mathbb{R}$
+\end_inset
+
+.
+ Weiterhin modellieren wir
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+konfuse Begründung hier einfügen ...
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $y'=-cy+dxy$
+\end_inset
+
+.
+ Zusammen erhalten wir
+\begin_inset Formula 
+\begin{equation}
+x'=ax-bxy,\:\: y'=-cy+dxy.\label{eq:1.3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nun wird gefischt.
+ Das heißt, die Anzahl der Räuber- und Beutefische reduziert sich gleichmäßig
+ proportional zu ihrer Population, d.h.
+ die Abnahme der Zahl der Räuber ist 
+\begin_inset Formula $\varepsilon y$
+\end_inset
+
+ und die der Beutefische entsprechend 
+\begin_inset Formula $\varepsilon x$
+\end_inset
+
+ mit 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+.
+ Wir erhalten das neue, verfeinerte Modell
+\begin_inset Formula 
+\begin{equation}
+x'=(a-\varepsilon)x-bxy,\:\: y'=-(c+\varepsilon)y+dxy.\label{eq:1.4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kann 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1.4"
+
+\end_inset
+
+ erklären, warum eine Reduzierung des Fischfangs 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ sich wesentlich günstiger auf die Räuberfische als auf Beutefische auswirken
+ kann? Sei 
+\begin_inset Formula $\varepsilon<a$
+\end_inset
+
+ (moderates Fischen).
+ Lösungen dieser Gleichung sind
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x(t)\equiv y(t)\equiv0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ansatz: 
+\begin_inset Formula $x'(t)\equiv y'(t)\equiv0$
+\end_inset
+
+, d.h.
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ bzw.
+ 
+\begin_inset Formula $y$
+\end_inset
+
+ sind konstant.
+ Wir erhalten 
+\begin_inset Formula $(a-\varepsilon)x(t)-bx(t)y(t)=0$
+\end_inset
+
+ und 
+\begin_inset Formula $-(c+\varepsilon)y(t)+dx(t)y(t)=0$
+\end_inset
+
+.
+ Durch Umformung erhalten wir 
+\begin_inset Formula $x(t)y(t)=\frac{a-\varepsilon}{b}x(t)$
+\end_inset
+
+ bzw.
+ 
+\begin_inset Formula $x(t)y(t)=\frac{c+\varepsilon}{d}y(t)$
+\end_inset
+
+.
+ Damit ergibt sich 
+\begin_inset Formula $y(t)=\frac{a-\varepsilon}{b}$
+\end_inset
+
+ und 
+\begin_inset Formula $x(t)=\frac{c+\varepsilon}{d}$
+\end_inset
+
+ als zweite konstante Lösung.
+ Diese Lösung beschreibt ein natürliches Gleichgewicht der beiden Populationen.
+ Den Punkt 
+\begin_inset Formula $(\frac{c+\varepsilon}{d},\frac{a-\varepsilon}{b})\in\mathbb{R}^{2}$
+\end_inset
+
+ nennen wir einen stationären Punkt von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1.4"
+
+\end_inset
+
+.
+ Weitere konstante Lösungen existieren nicht.
+\end_layout
+
+\begin_layout Itemize
+Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1.4"
+
+\end_inset
+
+ folgern wir 
+\begin_inset Formula $\frac{x'}{x}=(a-\varepsilon)-by$
+\end_inset
+
+ und 
+\begin_inset Formula $\frac{y'}{y}=-(c+\varepsilon)+dx$
+\end_inset
+
+.
+ Wir multiplizieren mit 
+\begin_inset Formula $\frac{y'}{y}$
+\end_inset
+
+ bzw.
+ 
+\begin_inset Formula $\frac{x'}{x}$
+\end_inset
+
+ und setzen dann gleich.
+ Es ergibt sich 
+\begin_inset Formula $(-(c+\varepsilon)+dx)\frac{x'}{x}-((a-\varepsilon)-by)\frac{y'}{y}=0$
+\end_inset
+
+.
+ Den Ausdruck 
+\begin_inset Formula $\frac{x'}{x}$
+\end_inset
+
+ nennt man auch die logarithmische Ableitung, da 
+\begin_inset Formula $\frac{d}{dx}\log x(t)=\frac{x'}{x}$
+\end_inset
+
+.
+ Wir können daher schreiben 
+\begin_inset Formula $\frac{d}{dt}\left(-(c+\varepsilon)\log x+dx-(a-\varepsilon)\log y+by\right)=0$
+\end_inset
+
+.
+ Wir definieren 
+\begin_inset Formula $H(x,y):=-(c+\varepsilon)\log x+dx-(a-\varepsilon)\log y+by$
+\end_inset
+
+.
+ Also ist 
+\begin_inset Formula $H(x(t),y(t))$
+\end_inset
+
+ konstant.
+ Das heißt, jede Lösungskurve 
+\begin_inset Formula $t\mapsto(x(t),y(t))$
+\end_inset
+
+ liegt auf einer Niveaumenge der Funktion 
+\begin_inset Formula $H(x(t),y(t))$
+\end_inset
+
+.
+ Solch eine Funktion 
+\begin_inset Formula $H$
+\end_inset
+
+ nennt man ein erstes Integral des Systems 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1.4"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document
