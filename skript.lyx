@@ -43,15 +43,25 @@
 \newenvironment{thm}
   {\pushQED{\qed}\renewcommand{\qedsymbol}{$\circ$}\thmx}
   {\popQED\endthmx}
+\theoremstyle{plain}
+\ifx\thechapter\undefined
+  \newtheorem{lemx}{\protect\lemname}
+\else
+  \newtheorem{lemx}{\protect\lemname}[chapter]
+\fi
+\newenvironment{lem}
+  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\blacksquare$}\lemx}
+  {\popQED\endlemx}
 
 \providecommand{\definitionname}{Definition}
 \providecommand{\examplename}{Example}
 \providecommand{\factname}{Fact}
+\providecommand{\lemname}{Lemma}
 \providecommand{\theoremname}{Theorem}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language ngerman
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -725,11 +735,423 @@ reference "eq:1.4"
 \begin_inset Formula $H$
 \end_inset
 
- nennt man ein erstes Integral des Systems 
+ nennt man ein erstes Integral des Systems (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:1.4"
 
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lem}
+\end_layout
+
+\end_inset
+
+Die Niveaumenge der Funktion 
+\begin_inset Formula $H$
+\end_inset
+
+ im ersten Quadranten sind einfach geschlossene Kurven um den Gleichgewichtspunk
+t 
+\begin_inset Formula $(\frac{c+\varepsilon}{d},\frac{a-\varepsilon}{b})$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lem}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof}
+\end_layout
+
+\end_inset
+
+Siehe 2.
+ Übungsblatt.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof}
+\end_layout
+
+\end_inset
+
+Man kann zeigen, dass die Lösungskurven die Niveaumengen des ersten Integrals
+ vollständig und gegen den Uhrzeigersinn durchlaufen.
+ Alle nicht konstanten Lösungen der Differentialgleichung sind daher periodisch,
+ das heißt es gibt ein 
+\begin_inset Formula $T>0$
+\end_inset
+
+ mit 
+\begin_inset Formula $x(t+T)=x(t)$
+\end_inset
+
+ und 
+\begin_inset Formula $y(t+T)=y(t)$
+\end_inset
+
+ für alle 
+\begin_inset Formula $t\in\mathbb{R}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Um die Langzeitentwicklung zu studieren, betrachten wir Mittelwerte 
+\begin_inset Formula $\overline{x}=\frac{1}{T}\int_{0}^{t}x(t)dt$
+\end_inset
+
+, 
+\begin_inset Formula $\overline{y}=\frac{1}{T}\int_{0}^{T}y(t)dt$
+\end_inset
+
+ einer nicht konstanten, also periodischen Lösung 
+\begin_inset Formula $(x(t),y(t))$
+\end_inset
+
+ mit Periode 
+\begin_inset Formula $T>0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Es gilt 
+\begin_inset Formula 
+\[
+0=\frac{1}{T}\left(\log x(T)-\log x(0)\right)=\frac{1}{T}\int_{0}^{T}\frac{x'(t)}{x(t)}dt=\frac{1}{T}\int_{0}^{T}\left((a-\varepsilon)-by(t)\right)dt.
+\]
+
+\end_inset
+
+Wir erhalten 
+\begin_inset Formula $\frac{1}{T}\int_{0}^{T}by(t)dt=\frac{1}{T}\int_{0}^{T}(a-\varepsilon)dt$
+\end_inset
+
+ und daher 
+\begin_inset Formula $\frac{1}{T}\int_{0}^{T}by(t)dt=a-\varepsilon$
+\end_inset
+
+.
+ Es folgt 
+\begin_inset Formula $\overline{y}=\frac{a-\varepsilon}{b}$
+\end_inset
+
+.
+ Analog erhält man 
+\begin_inset Formula $\overline{x}=\frac{c+\varepsilon}{d}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Damit erhalten wir als Ergebnis, dass (innerhalb unseres Modells) eine Reduzieru
+ng des Fischfangs 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ tatsächlich eine Zunahme der Räuberpopulation aber eine Abnahme der Beutepopula
+tion bewirkt.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Dieses sogenannte Voltera-Prinzip gilt auch für den Einsatz von Insektenvernicht
+ungsmitteln.
+\end_layout
+
+\begin_layout Subsection
+Oszillatoren
+\end_layout
+
+\begin_layout Subsubsection
+Das mathematische Pendel
+\end_layout
+
+\begin_layout Standard
+Bild vom Pendel hier einfügen ...
+\end_layout
+
+\begin_layout Standard
+Für die Kraft gilt 
+\begin_inset Formula $\text{Kraft}=m\cdot a=m\cdot t\cdot\Theta''(t)$
+\end_inset
+
+.
+ Die Tangentialkraft wirkend auf das Pendel ist 
+\begin_inset Formula $m\cdot g\cdot\sin\Theta$
+\end_inset
+
+.
+ Wir nehmen an, dass die auch noch auftretende Reibungskraft sei proportional
+ zur Geschwindigkeit 
+\begin_inset Formula $\dot{\Theta}$
+\end_inset
+
+, also 
+\begin_inset Formula $-hl\Theta'(t)$
+\end_inset
+
+ für 
+\begin_inset Formula $h\geq0$
+\end_inset
+
+.
+ Damit folgt 
+\begin_inset Formula $\Theta''(t)=-\frac{k}{m}\Theta'(t)-\frac{g}{l}\sin\Theta(t)$
+\end_inset
+
+.
+ Wir betrachten die Anfangsbedingungen 
+\begin_inset Formula $\Theta(0)$
+\end_inset
+
+ und 
+\begin_inset Formula $\Theta'(0)$
+\end_inset
+
+.
+ Lösungen:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Theta(t)\equiv0$
+\end_inset
+
+.
+ (Entspricht 
+\begin_inset Formula $\Theta(0)=0$
+\end_inset
+
+ und 
+\begin_inset Formula $\Theta'(0)=0$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\Theta(t)\equiv\pi$
+\end_inset
+
+.
+ (Entspricht 
+\begin_inset Formula $\Theta(0)=\pi$
+\end_inset
+
+ und 
+\begin_inset Formula $\Theta'(0)=0$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Enumerate
+Die Differentialgleichung zweiter Ordnung lässt sich in ein System zweier
+ Differentialgleichungen erster Ordnung äquivalent überführen.
+ Sei dazu 
+\begin_inset Formula $x(t):=\Theta(t)$
+\end_inset
+
+ und 
+\begin_inset Formula $y(t):=\Theta'(t)$
+\end_inset
+
+.
+ Also ist die Differentialgleichung äquivalent zu 
+\begin_inset Formula $x'=y$
+\end_inset
+
+ und 
+\begin_inset Formula $y=-\frac{k}{m}y-\frac{g}{l}\sin x$
+\end_inset
+
+.
+ Durch Vergabe von Anfangsbedinungen 
+\begin_inset Formula $(x_{0},y_{0})\in\mathbb{R}^{2}$
+\end_inset
+
+ ist die Lösung 
+\begin_inset Formula $t\mapsto(x(t),y(t))$
+\end_inset
+
+ eindeutig bestimmt
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Das haben wir noch nicht bewiesen, klingt aber physikalisch plausibel.
+\end_layout
+
+\end_inset
+
+.
+ Im Spezialfall 
+\begin_inset Formula $h=0$
+\end_inset
+
+ erhalten wir das Gleichungssystem 
+\begin_inset Formula $x'=y$
+\end_inset
+
+ und 
+\begin_inset Formula $y'=-\frac{q}{l}\sin x$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Frage: Gibt es ein erstes Integral, also eine Funktion 
+\begin_inset Formula $H(x,y)$
+\end_inset
+
+, die konstant entlang von Lösungen ist? Wir versuchen es mit der Gesamtenergie
+ 
+\begin_inset Formula $H(x,y):=W_{kin}+W_{pot}=\frac{1}{2}ml^{2}y^{2}+mgl(1-\cos x)$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{proof}
+\end_layout
+
+\end_inset
+
+
+
+\begin_inset Formula $\frac{d}{dt}\left(H\circ(x(t),y(t))\right)=ml^{2}yy'+mgl\sin x\cdot x'=ml^{2}x'\cdot(-\frac{g}{l}\sin x)+...=0$
+\end_inset
+
+
+\lang ngerman
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{proof}
+\end_layout
+
+\end_inset
+
+Für Reibung 
+\begin_inset Formula $h>0$
+\end_inset
+
+ streben fast alle Lösungen 
+\begin_inset Formula $(x(t),y(t))$
+\end_inset
+
+ für 
+\begin_inset Formula $t\to\infty$
+\end_inset
+
+ gegen die stabilen Ruhelagen 
+\begin_inset Formula $(2k\pi,0)$
+\end_inset
+
+, 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+.
+ Für jedes 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+ konvergieren jeweils genau zwei Lösungskurven für 
+\begin_inset Formula $t\to\infty$
+\end_inset
+
+ gegen die instabile Ruhelage 
+\begin_inset Formula $((2k+1)\pi,0)$
+\end_inset
+
+.
+ Jede nicht konstante Lösung konvergiert für 
+\begin_inset Formula $t\to\infty$
+\end_inset
+
+ gegen eine der Ruhelagen 
+\begin_inset Formula $(k\pi,0)$
+\end_inset
+
+, 
+\begin_inset Formula $k\in\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Der harmonische Oszillator
+\end_layout
+
+\begin_layout Standard
+Es gilt
+\begin_inset Formula $\sin\Theta(t)=\Theta(t)+\sum_{j=1}^{\infty}(-1)^{2j+1}\frac{\Theta(t)^{2j+1}}{(2j+1)!}=\Theta(t)+\sigma(\Theta(t))$
+\end_inset
+
+.
+ Damit ist die Linearisierung um 0 gegeben durch 
+\begin_inset Formula $\Theta''(t)=-\frac{k}{m}\Theta'(t)-\frac{g}{l}\Theta(t)$
+\end_inset
+
+.
+ Dies ist eine lineare Differentialgleichung zweiter Ordnung.
+ Ohne Reibung (
+\begin_inset Formula $h=0$
+\end_inset
+
+) erhält man 
+\begin_inset Formula $\Theta''=\frac{g}{l}\Theta$
 \end_inset
 
 .
