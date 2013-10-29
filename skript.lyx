@@ -2,64 +2,14 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass article
-\begin_preamble
-\usepackage{amsthm}% http://ctan.org/pkg/amsthm
-\usepackage{amssymb}% http://ctan.org/pkg/amssymb
-
-\theoremstyle{definition}
-\ifx\thechapter\undefined
-  \newtheorem{examplex}{\protect\examplename}
-\else
-  \newtheorem{examplex}{\protect\examplename}[chapter]
-\fi
-\newenvironment{example}
-  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\triangle$}\examplex}
-  {\popQED\endexamplex}
-\theoremstyle{plain}
-\ifx\thechapter\undefined
-  \newtheorem{factx}{\protect\factname}
-\else
-  \newtheorem{factx}{\protect\factname}[chapter]
-\fi
-\newenvironment{fact}
-  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\blacksquare$}\factx}
-  {\popQED\endfactx}
-\theoremstyle{definition}
-\ifx\thechapter\undefined
-  \newtheorem{defnx}{\protect\definitionname}
-\else
-  \newtheorem{defnx}{\protect\definitionname}[chapter]
-\fi
-\newenvironment{defn}
-  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\Box$}\defnx}
-  {\popQED\enddefnx}
-\theoremstyle{plain}
-\ifx\thechapter\undefined
-  \newtheorem{thmx}{\protect\theoremname}
-\else
-  \newtheorem{thmx}{\protect\theoremname}[chapter]
-\fi
-\newenvironment{thm}
-  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\circ$}\thmx}
-  {\popQED\endthmx}
-\theoremstyle{plain}
-\ifx\thechapter\undefined
-  \newtheorem{lemx}{\protect\lemname}
-\else
-  \newtheorem{lemx}{\protect\lemname}[chapter]
-\fi
-\newenvironment{lem}
-  {\pushQED{\qed}\renewcommand{\qedsymbol}{$\blacksquare$}\lemx}
-  {\popQED\endlemx}
-
-\providecommand{\definitionname}{Definition}
-\providecommand{\examplename}{Example}
-\providecommand{\factname}{Fact}
-\providecommand{\lemname}{Lemma}
-\providecommand{\theoremname}{Theorem}
-\end_preamble
+\textclass amsart
 \use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+theorems-sec
+\end_modules
 \maintain_unincluded_children false
 \language ngerman
 \language_package default
@@ -206,23 +156,13 @@ Nehmen wir an, dass
  Ordnung.
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{thm}
-\end_layout
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:1.1"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 Es sei 
 \begin_inset Formula $a\in\mathbb{C}$
 \end_inset
@@ -253,22 +193,6 @@ Es sei
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{thm}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section*
@@ -344,23 +268,7 @@ Df(x)\cdot h=\frac{d}{d\varepsilon}f(x+\varepsilon h)|_{\varepsilon=0}.
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{example}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Example*
 Sei 
 \begin_inset Formula $g:\mathbb{R}^{n}\to\mathbb{R},[x_{1},...,x_{n}]^{T}=x\mapsto g(x)$
 \end_inset
@@ -368,22 +276,6 @@ Sei
 .
  Dann ist 
 \begin_inset Formula $\frac{\partial}{\partial x_{i}}g(x)=Dg(x)\cdot[0\:0\;...\:1\:...\:0\:0]=$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{example}
-\end_layout
-
 \end_inset
 
 
@@ -743,19 +635,13 @@ reference "eq:1.4"
 \end_inset
 
 ).
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{lem}
 \end_layout
+
+\begin_deeper
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:1.2"
 
 \end_inset
 
@@ -769,46 +655,14 @@ t
 \end_inset
 
 .
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{lem}
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{proof}
-\end_layout
-
-\end_inset
-
+\begin_layout Proof
 Siehe 2.
  Übungsblatt.
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{proof}
 \end_layout
 
-\end_inset
-
+\begin_layout Standard
 Man kann zeigen, dass die Lösungskurven die Niveaumengen des ersten Integrals
  vollständig und gegen den Uhrzeigersinn durchlaufen.
  Alle nicht konstanten Lösungen der Differentialgleichung sind daher periodisch,
@@ -829,9 +683,9 @@ Man kann zeigen, dass die Lösungskurven die Niveaumengen des ersten Integrals
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 Um die Langzeitentwicklung zu studieren, betrachten wir Mittelwerte 
 \begin_inset Formula $\overline{x}=\frac{1}{T}\int_{0}^{t}x(t)dt$
 \end_inset
@@ -849,9 +703,9 @@ Um die Langzeitentwicklung zu studieren, betrachten wir Mittelwerte
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 Es gilt 
 \begin_inset Formula 
 \[
@@ -879,9 +733,9 @@ Wir erhalten
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 Damit erhalten wir als Ergebnis, dass (innerhalb unseres Modells) eine Reduzieru
 ng des Fischfangs 
 \begin_inset Formula $\varepsilon$
@@ -890,13 +744,14 @@ ng des Fischfangs
  tatsächlich eine Zunahme der Räuberpopulation aber eine Abnahme der Beutepopula
 tion bewirkt.
  
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 Dieses sogenannte Voltera-Prinzip gilt auch für den Einsatz von Insektenvernicht
 ungsmitteln.
 \end_layout
 
+\end_deeper
 \begin_layout Subsection
 Oszillatoren
 \end_layout
@@ -906,11 +761,16 @@ Das mathematische Pendel
 \end_layout
 
 \begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
 Bild vom Pendel hier einfügen ...
 \end_layout
 
-\begin_layout Standard
-Für die Kraft gilt 
+\end_inset
+
+ Für die Kraft gilt 
 \begin_inset Formula $\text{Kraft}=m\cdot a=m\cdot t\cdot\Theta''(t)$
 \end_inset
 
@@ -1049,38 +909,17 @@ Frage: Gibt es ein erstes Integral, also eine Funktion
 \end_inset
 
 .
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{proof}
 \end_layout
 
-\end_inset
-
-
-
+\begin_deeper
+\begin_layout Proof
 \begin_inset Formula $\frac{d}{dt}\left(H\circ(x(t),y(t))\right)=ml^{2}yy'+mgl\sin x\cdot x'=ml^{2}x'\cdot(-\frac{g}{l}\sin x)+...=0$
 \end_inset
 
 
-\lang ngerman
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{proof}
 \end_layout
 
-\end_inset
-
+\begin_layout Standard
 Für Reibung 
 \begin_inset Formula $h>0$
 \end_inset
@@ -1130,12 +969,13 @@ Für Reibung
 .
 \end_layout
 
+\end_deeper
 \begin_layout Subsubsection
 Der harmonische Oszillator
 \end_layout
 
 \begin_layout Standard
-Es gilt
+Es gilt 
 \begin_inset Formula $\sin\Theta(t)=\Theta(t)+\sum_{j=1}^{\infty}(-1)^{2j+1}\frac{\Theta(t)^{2j+1}}{(2j+1)!}=\Theta(t)+\sigma(\Theta(t))$
 \end_inset
 
@@ -1152,6 +992,564 @@ Es gilt
 
 ) erhält man 
 \begin_inset Formula $\Theta''=\frac{g}{l}\Theta$
+\end_inset
+
+.
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+25.11.2013
+\end_layout
+
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Benutzername/Kennwort für Skrpit: dgl/skript
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:1.3"
+
+\end_inset
+
+Sei 
+\begin_inset Formula $\omega\in\mathbb{R}$
+\end_inset
+
+ und 
+\begin_inset Formula $x:[a,b]\to\mathbb{R}$
+\end_inset
+
+ zweimal differenzierbar mit 
+\begin_inset Formula $x''(t)=-\omega^{2}x(t)$
+\end_inset
+
+ für 
+\begin_inset Formula $t\in[a,b]$
+\end_inset
+
+.
+ Dann gibt es Konstanten 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{2}\in\mathbb{R}$
+\end_inset
+
+ mit 
+\begin_inset Formula $x(t)=c_{1}\sin\omega t+c_{2}\cos\omega t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Sei 
+\begin_inset Formula $x:[a,b]\to\mathbb{C}$
+\end_inset
+
+ eine komplexe zweimal differenzierbare Funktion mit 
+\begin_inset Formula $x''(t)=-\omega^{2}x(t)$
+\end_inset
+
+.
+ Wir setzen 
+\begin_inset Formula $x_{1}(t):=x'(t)-i\omega x(t)$
+\end_inset
+
+.
+ Dann gilt 
+\begin_inset Formula $x_{1}'(t)=x''(t)-i\omega x'(t)=-\omega^{2}x(t)-i\omega x'(t)=-i\omega(-i\omega x(t)+x'(t))=-i\omega x_{1}(t)$
+\end_inset
+
+.
+ Satz 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:1.1"
+
+\end_inset
+
+ impliziert dann 
+\begin_inset Formula $x_{1}(t)=\alpha e^{-i\omega t}$
+\end_inset
+
+ für ein 
+\begin_inset Formula $\alpha\in\mathbb{C}$
+\end_inset
+
+.
+ Analog ergibt sich 
+\begin_inset Formula $x_{2}(t)=x'(t)+i\omega x(t)=\beta e^{i\omega t}$
+\end_inset
+
+ für ein 
+\begin_inset Formula $\beta\in\mathbb{C}$
+\end_inset
+
+.
+ Also 
+\begin_inset Formula $x(t)=ae^{-i\omega t}+be^{i\omega t}$
+\end_inset
+
+ mit 
+\begin_inset Formula $a,b\in\mathbb{C}$
+\end_inset
+
+.
+ Ist 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ reell-wertig, so folgt 
+\begin_inset Formula $x(t)=c_{1}\sin\omega t+c_{2}\cos\omega t$
+\end_inset
+
+ für gewisse Konstanten 
+\begin_inset Formula $c_{1},c_{2}\in\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es ist also sinnvoll, Satz 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:1.1"
+
+\end_inset
+
+ für die komplexe Differentialgleichung 
+\begin_inset Formula $x'(t)=ax(t)$
+\end_inset
+
+ für 
+\begin_inset Formula $a\in\mathbb{C}$
+\end_inset
+
+ zur Verfügung zu haben.
+\end_layout
+
+\begin_layout Section
+Existenz- und eindeutigkeitssätze
+\end_layout
+
+\begin_layout Standard
+Im Nachfolgenden ist 
+\begin_inset Formula $\mathbb{K}\in\{\mathbb{R},\mathbb{C}\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "def:2.1"
+
+\end_inset
+
+Es sei 
+\begin_inset Formula $J\subseteq\mathbb{R}$
+\end_inset
+
+, 
+\begin_inset Formula $D\subseteq\mathbb{R}^{n}$
+\end_inset
+
+ und 
+\begin_inset Formula $f:J\times D\to\mathbb{K}^{n}$
+\end_inset
+
+ eine stetige Funktion.
+ Eine differenzierbare Funktion 
+\begin_inset Formula $x:I\to D$
+\end_inset
+
+ heißt 
+\emph on
+Lösung der Differentialgleichung 
+\emph default
+
+\begin_inset Formula $x'=f(t,x)$
+\end_inset
+
+, falls 
+\begin_inset Formula $I$
+\end_inset
+
+ ein Teilintervall von 
+\begin_inset Formula $J$
+\end_inset
+
+ ist und 
+\begin_inset Formula $x'(t)=f(t,x(t))$
+\end_inset
+
+ für alle 
+\begin_inset Formula $t\in I$
+\end_inset
+
+ gilt.
+ Ist zusätzlich 
+\begin_inset Formula $x(t_{0})=x_{0}$
+\end_inset
+
+ für ein 
+\begin_inset Formula $t_{0}\in I$
+\end_inset
+
+, so nennt man 
+\begin_inset Formula $x:I\to D$
+\end_inset
+
+ 
+\emph on
+Lösung des Anfangswertproblems
+\emph default
+ (AWP) 
+\begin_inset Formula 
+\begin{equation}
+x'=f(t,x),x(t_{0})=x_{0}.\label{eq:2.1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset label
+LatexCommand label
+name "ex:2.2"
+
+\end_inset
+
+Gegeben sei das Anfangswertproblem 
+\begin_inset Formula $x'=-tx^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $x(0)=-1$
+\end_inset
+
+.
+ Die rechte Seite 
+\begin_inset Formula $f(t,x)=-tx^{2}$
+\end_inset
+
+ ist sicherlich auf 
+\begin_inset Formula $\mathbb{R}\times\mathbb{R}$
+\end_inset
+
+ definiert, d.h.
+ 
+\begin_inset Formula $J=\mathbb{R}$
+\end_inset
+
+ und 
+\begin_inset Formula $D=\mathbb{R}$
+\end_inset
+
+.
+ Der Seperationsansatz liefert 
+\begin_inset Formula 
+\[
+x(t)=\dfrac{2}{t^{2}-2}.
+\]
+
+\end_inset
+
+Das größte Intervall 
+\begin_inset Formula $I$
+\end_inset
+
+ mit 
+\begin_inset Formula $0\in I$
+\end_inset
+
+ (AWP) auf dem diese Lösung existiert, ist 
+\begin_inset Formula $I=]-\sqrt{2},\sqrt{2}[$
+\end_inset
+
+.
+ Im Allgemeinen wird dieses Anfangswertproblem keine Lösung auf ganz 
+\begin_inset Formula $J$
+\end_inset
+
+ haben, wenn überhaupt nur auf einem Teilintervall.
+\end_layout
+
+\begin_layout Subsection
+Eindeutigkeit
+\end_layout
+
+\begin_layout Standard
+Anfangswertprobleme können mehrere Lösungen zeigen, wie das folgende Beispiel
+ zeigt.
+\end_layout
+
+\begin_layout Example
+Betrachte einen Eimer mit Loch.
+ 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ sei die Füllhöhe des Eimers mit Wasser, 
+\begin_inset Formula $a$
+\end_inset
+
+ der Durchmesser des Lochs und 
+\begin_inset Formula $A$
+\end_inset
+
+ der Durchmesser des Eimers.
+ Wir leiten aus der Physik her:
+\begin_inset Formula 
+\[
+\left(\frac{a}{2}\right)^{2}\pi v(t)=-\left(\frac{A}{2}\right)^{2}\pi x'(t).
+\]
+
+\end_inset
+
+
+\begin_inset Formula $\rho>0$
+\end_inset
+
+ sei die Dichte des Wassers.
+ Wir erhalten mit der Fläche 
+\begin_inset Formula $F$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+\Delta xF\rho gx=\frac{1}{2}\Delta xF\rho v^{2}\implies v^{2}=2gx,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+x'(t)=-c\sqrt{|x(t)|}\implies c=\sqrt{2g}\frac{a^{2}}{A^{2}}>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Dies ist das Gesetz von Toricelli.
+ 
+\end_layout
+
+\begin_layout Example
+Sei der Eimer zum Zeitpunkt 
+\begin_inset Formula $T$
+\end_inset
+
+ leer, d.h.
+ 
+\begin_inset Formula $x(T)=0$
+\end_inset
+
+ und für 
+\begin_inset Formula $c=2$
+\end_inset
+
+ haben wir dann das AWP 
+\begin_inset Formula 
+\begin{equation}
+x'=-2\sqrt{|x(t)|},x(T)=0.\label{eq:2.2}
+\end{equation}
+
+\end_inset
+
+Mit dem Seperationsansatz ermittelt man unendlich viele Lösungen 
+\begin_inset Formula $x_{a,b}:\mathbb{R}\to\mathbb{R}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+x_{a,b}(t)=\begin{cases}
+(t-a)^{2} & t<a,\\
+0 & a\leq t\leq b,\\
+-(t-b)^{2} & t>b.
+\end{cases}
+\]
+
+\end_inset
+
+
+\begin_inset Formula $a,b$
+\end_inset
+
+ sind reelle Zahlen mit 
+\begin_inset Formula $a\leq T\leq b$
+\end_inset
+
+, sonst beliebig.
+ Die rechte Seite 
+\begin_inset Formula $f(t,x)=-2\sqrt{|x|}$
+\end_inset
+
+ ist zwar stetig, jedoch ist die für alle 
+\begin_inset Formula $x\neq0$
+\end_inset
+
+ existierende partielle Ableitung 
+\begin_inset Formula $\frac{\partial}{\partial x}f(t,x)=Dxf(t,x)=D_{2}f(t,x)=f_{x}(t,x)$
+\end_inset
+
+ unbeschränkt für 
+\begin_inset Formula $x\to0$
+\end_inset
+
+.
+ Betrachte nach dem Mittelwertsatz 
+\begin_inset Formula 
+\begin{equation}
+\dfrac{|f(t,x_{1})-f(t,x_{2})|}{|x_{1}-x_{2}|}\label{eq:2.3}
+\end{equation}
+
+\end_inset
+
+wird beliebig groß falls 
+\begin_inset Formula $x_{1},x_{2}$
+\end_inset
+
+ genügend nahe bei 0.
+ Die Eindeutigkeit der Lösung eines Anfangswertproblemes 
+\begin_inset Formula $x'=f(t,x),x(t_{0})=x_{0}$
+\end_inset
+
+ ist gesichert, falls (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2.3"
+
+\end_inset
+
+) beschränkt bleibt.
+\end_layout
+
+\begin_layout Definition
+Sei 
+\begin_inset Formula $G\subseteq\mathbb{R}\times\mathbb{K}^{n}$
+\end_inset
+
+ eine Menge.
+ Man sagt eine Abbildung 
+\begin_inset Formula $f:G\to\mathbb{K}^{n},(t,x)\mapsto f(t,x)$
+\end_inset
+
+ erfüllt eine Lipschitzbedingung bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ auf 
+\begin_inset Formula $G$
+\end_inset
+
+, wenn es eine Konstante 
+\begin_inset Formula $L>0$
+\end_inset
+
+ gibt mit 
+\begin_inset Formula $|f(t,x_{1})-f(t,x_{2})|\leq L|x_{1}-x_{2}|$
+\end_inset
+
+ für alle Paare 
+\begin_inset Formula $(t,x_{1}),(t,x_{2})\in G$
+\end_inset
+
+ gibt.
+ In diesem Fall heißt 
+\begin_inset Formula $L$
+\end_inset
+
+ 
+\emph on
+Lipschitz-Konstante
+\emph default
+ für 
+\begin_inset Formula $f$
+\end_inset
+
+ auf 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Die Funktion 
+\begin_inset Formula $f:G\to\mathbb{K}^{n}$
+\end_inset
+
+ heißt 
+\emph on
+Lipschitz-stetig
+\emph default
+ bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+, falls jeder Punkt 
+\begin_inset Formula $(t_{0},x_{0})\in G$
+\end_inset
+
+ eine Umgebung 
+\begin_inset Formula $U$
+\end_inset
+
+ besitzt, so dass 
+\begin_inset Formula $f|_{U\cap G}$
+\end_inset
+
+ einer Lipschitz-Bedingung bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ auf 
+\begin_inset Formula $U\cap G$
+\end_inset
+
+ genügt.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $f:\mathbb{R}\times[0;\infty[\to\mathbb{R},(t,x)\mapsto t\sqrt{x}$
+\end_inset
+
+ ist Lipschitz-stetig bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ auf 
+\begin_inset Formula $\mathbb{R}\times]0;\infty[$
+\end_inset
+
+, aber nicht auf 
+\begin_inset Formula $\mathbb{R}\times[0;\infty[$
 \end_inset
 
 .
