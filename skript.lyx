@@ -1454,6 +1454,12 @@ reference "eq:2.3"
 \end_layout
 
 \begin_layout Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "def:2.4"
+
+\end_inset
+
 Sei 
 \begin_inset Formula $G\subseteq\mathbb{R}\times\mathbb{K}^{n}$
 \end_inset
@@ -1537,6 +1543,13 @@ Lipschitz-stetig
 \end_layout
 
 \begin_layout Example
+\begin_inset CommandInset label
+LatexCommand label
+name "ex:2.5"
+
+\end_inset
+
+
 \begin_inset Formula $f:\mathbb{R}\times[0;\infty[\to\mathbb{R},(t,x)\mapsto t\sqrt{x}$
 \end_inset
 
@@ -1553,6 +1566,872 @@ Lipschitz-stetig
 \end_inset
 
 .
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+30.10.2013
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Proof
+Sei 
+\begin_inset Formula $x_{0}\geq0$
+\end_inset
+
+ und 
+\begin_inset Formula $t_{0}\in\mathbb{R}$
+\end_inset
+
+.
+ Ist 
+\begin_inset Formula $x_{0}>0$
+\end_inset
+
+ kann man ein 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ wählen, so dass 
+\begin_inset Formula $x_{0}-\varepsilon>0$
+\end_inset
+
+.
+ Dann gilt für alle 
+\begin_inset Formula $x_{1},x_{2}\geq x_{0}-\varepsilon$
+\end_inset
+
+ stets 
+\begin_inset Formula $\left|f(t,x_{1})-f(t,x_{2})\right|=\left|t\right|\left|\sqrt{x_{1}}-\sqrt{x_{2}}\right|=\left|t\right|\frac{|x_{1}-x_{2}|}{\sqrt{x_{1}}+\sqrt{x_{2}}}\leq\frac{\left|t\right|}{s\sqrt{x_{0}-\varepsilon}}\left|x_{1}-x_{2}\right|$
+\end_inset
+
+.
+ Also erfüllt 
+\begin_inset Formula $f$
+\end_inset
+
+ eine Lipschitz-Bedingung in einer Umgebung von 
+\begin_inset Formula $(t_{0},x_{0})$
+\end_inset
+
+.
+ Dann gilt für 
+\begin_inset Formula $x_{1}=0$
+\end_inset
+
+ und 
+\begin_inset Formula $x_{2}=\frac{1}{n^{2}}$
+\end_inset
+
+, 
+\begin_inset Formula $n\in\mathbb{N}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\left|f(t,x_{1})-f(t,x_{2})\right|=\frac{t}{n}=tn\cdot\left|x_{1}-x_{2}\right|$
+\end_inset
+
+, so dass 
+\begin_inset Formula $f$
+\end_inset
+
+ in keiner Umgebung von 
+\begin_inset Formula $(t_{0},0)$
+\end_inset
+
+ einer Lipschitz-Bedingung genügen kann.
+\end_layout
+
+\begin_layout Example
+\begin_inset CommandInset label
+LatexCommand label
+name "ex:2.6"
+
+\end_inset
+
+Es sei 
+\begin_inset Formula $J\subset\mathbb{R}$
+\end_inset
+
+ offen und 
+\begin_inset Formula $A:J\to\mathbb{K}^{m\times n}$
+\end_inset
+
+ stetig.
+ Dann ist 
+\begin_inset Formula $f:J\times\mathbb{K}^{n}\to\mathbb{K}^{m}$
+\end_inset
+
+, 
+\begin_inset Formula $(t,x)\mapsto A(t)\cdot x=f(t,x)$
+\end_inset
+
+ Lipschitz-stetig bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ auf 
+\begin_inset Formula $J\times\mathbb{K}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Es sei 
+\begin_inset Formula $t_{0}\in J$
+\end_inset
+
+ und 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+ mit 
+\begin_inset Formula $I:=[t_{0}-\varepsilon,t_{0}+\varepsilon]\subset J$
+\end_inset
+
+.
+ Die (stetigen) Einträge 
+\begin_inset Formula $a_{jk}(t)$
+\end_inset
+
+ der Matrix 
+\begin_inset Formula $A(t)$
+\end_inset
+
+ sind auf dem kompakten Intervall 
+\begin_inset Formula $I$
+\end_inset
+
+ durch eine Konstante 
+\begin_inset Formula $L$
+\end_inset
+
+ beschränkt.
+ Eine Anwendung der Cauchy-Schwarzschen Ungleichung ergibt 
+\begin_inset Formula $\left|A(t)\cdot x\right|\leq L\cdot\sqrt{n\cdot m}\left|x\right|$
+\end_inset
+
+ für alle 
+\begin_inset Formula $x\in\mathbb{K}^{n}$
+\end_inset
+
+ und alle 
+\begin_inset Formula $t\in I$
+\end_inset
+
+, also 
+\begin_inset Formula $\left|f(t,x_{1})-f(t,x_{2})\right|\leq L\cdot\sqrt{n\cdot m}\left|x_{1}-x_{2}\right|$
+\end_inset
+
+ für alle 
+\begin_inset Formula $t\in I$
+\end_inset
+
+ und alle 
+\begin_inset Formula $x_{1},x_{2}\in\mathbb{K}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:2.7"
+
+\end_inset
+
+Es sei 
+\begin_inset Formula $G\subseteq\mathbb{R}\times\mathbb{K}^{n}$
+\end_inset
+
+ und 
+\begin_inset Formula $f:G\to\mathbb{K}^{m}$
+\end_inset
+
+ sei stetig.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Ist 
+\begin_inset Formula $f$
+\end_inset
+
+ auf der offenen Menge 
+\begin_inset Formula $G$
+\end_inset
+
+ stetig differenzierbar bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+, so ist 
+\begin_inset Formula $f$
+\end_inset
+
+ Lipschitz-stetig bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Ist 
+\begin_inset Formula $K\subseteq G$
+\end_inset
+
+ kompakt und ist 
+\begin_inset Formula $f$
+\end_inset
+
+ Lipschitz-stetig bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ auf 
+\begin_inset Formula $K$
+\end_inset
+
+, so erfüllt 
+\begin_inset Formula $f$
+\end_inset
+
+ eine Lipschitz-Bedingung bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ auf 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+Wir beweisen die zwei Behauptungen separat.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Es sei 
+\begin_inset Formula 
+\[
+D_{2}f(t,x)=D_{x}f(t,x)=\left[\begin{array}{ccc}
+\frac{\partial f_{1}(t,x)}{\partial x_{1}} & \cdots & \frac{\partial f_{1}(t,x)}{\partial x_{n}}\\
+\vdots &  & \vdots\\
+\frac{\partial f_{m}(t,x)}{\partial x_{1}} & \cdots & \frac{\partial f_{m}(t,x)}{\partial x_{n}}
+\end{array}\right]
+\]
+
+\end_inset
+
+die Jacobimatrix von 
+\begin_inset Formula $x\mapsto f(t,x)$
+\end_inset
+
+.
+ Wir fixieren 
+\begin_inset Formula $(t_{0},x_{0})\in G$
+\end_inset
+
+.
+ Dann gibt es Kugeln 
+\begin_inset Formula $B_{1}:=B_{r}(t_{0})$
+\end_inset
+
+ und 
+\begin_inset Formula $B_{2}:=B_{r}(x_{0})$
+\end_inset
+
+ mit 
+\begin_inset Formula $r>0$
+\end_inset
+
+ derart, dass 
+\begin_inset Formula $B:=B_{1}\times B_{2}\subset G$
+\end_inset
+
+.
+ Wir zeigen nun, dass 
+\begin_inset Formula $f$
+\end_inset
+
+ auf 
+\begin_inset Formula $B$
+\end_inset
+
+ einer Lipschitz-Bedingung bezüglich 
+\begin_inset Formula $x\in B_{2}$
+\end_inset
+
+ genügt.
+ Wegen der stetigen Differenzierbarkeit von 
+\begin_inset Formula $f$
+\end_inset
+
+ bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ sind die Einträge von 
+\begin_inset Formula $D_{2}f(t,x)$
+\end_inset
+
+ in der kompakten Menge 
+\begin_inset Formula $B$
+\end_inset
+
+ durch eine Konstante 
+\begin_inset Formula $\frac{L}{\sqrt{nm}}>0$
+\end_inset
+
+ beschränkt.
+ Für alle 
+\begin_inset Formula $(t,x)\in B$
+\end_inset
+
+ und alle 
+\begin_inset Formula $v\in\mathbb{R}^{n}$
+\end_inset
+
+ gilt daher 
+\begin_inset Formula $\left|D_{2}f(t,x)\cdot v\right|\leq L\cdot\left|v\right|$
+\end_inset
+
+.
+ Für fest gewählte 
+\begin_inset Formula $(t,x_{1})$
+\end_inset
+
+, 
+\begin_inset Formula $(t,x_{2})\in B$
+\end_inset
+
+ sei 
+\begin_inset Formula $\varphi(s):=f(t,x+s(x_{2}-x_{1}))$
+\end_inset
+
+ für 
+\begin_inset Formula $0\leq s\leq1$
+\end_inset
+
+.
+ Mit der Kettenregel erhalten wir 
+\begin_inset Formula $\varphi'(s)=D_{2}f(t,x_{1}+s(x_{2}-x_{1}))\cdot(x_{2}-x_{1})$
+\end_inset
+
+, also 
+\begin_inset Formula $f(t,x_{2})-f(t,x_{1})=\varphi(1)-\varphi(0)=\int_{0}^{1}\varphi'(s)ds=\int_{0}^{1}D_{2}f(t,x_{1}+s(x_{2}-x_{1}))\cdot(x_{2}-x_{1})ds$
+\end_inset
+
+.
+ Damit 
+\begin_inset Formula 
+\[
+\left|f(t,x_{2})-f(t,x_{1})\right|\leq\int_{0}^{1}L\left|x_{2}-x_{1}\right|ds=L\left|x_{2}-x_{1}\right|
+\]
+
+\end_inset
+
+für alle 
+\begin_inset Formula $\left(t,x_{1}\right),\left(t,x_{2}\right)\in B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Nimm an, dass 
+\begin_inset Formula $f$
+\end_inset
+
+ keine Lipschitz-Bedingung bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ auf 
+\begin_inset Formula $K$
+\end_inset
+
+ erfüllt.
+ Dann gibt es 
+\begin_inset Formula $(t_{n},x_{n}),(t_{n},y_{n})\in K$
+\end_inset
+
+ mit 
+\begin_inset Formula 
+\[
+\left|f(t_{n},x_{n})-f(t_{n},y_{n})\right|>n\cdot\left|x_{n}-y_{n}\right|
+\]
+
+\end_inset
+
+für alle 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+.
+ Da 
+\begin_inset Formula $K$
+\end_inset
+
+ kompakt ist, können wir nach eventueller Auswahl einer Teilfolge annehmen,
+ dass 
+\begin_inset Formula $(t_{n},x_{n})\to(t_{0},x_{0})\in K$
+\end_inset
+
+ und 
+\begin_inset Formula $(t_{n},y_{n})\to(t_{0},y_{0})\in K$
+\end_inset
+
+.
+ Also 
+\begin_inset Formula $\left|x_{n}-y_{n}\right|\leq\frac{1}{n}\left|f(t_{n},x_{n})-f(t_{n},y_{n})\right|\to0$
+\end_inset
+
+ für 
+\begin_inset Formula $n\to\infty$
+\end_inset
+
+.
+ Damit 
+\begin_inset Formula $x_{0}=y_{0}$
+\end_inset
+
+.
+ Es sei nun 
+\begin_inset Formula $U$
+\end_inset
+
+ eine Umgebung von 
+\begin_inset Formula $(t_{0},x_{0})\in K$
+\end_inset
+
+ und 
+\begin_inset Formula $L$
+\end_inset
+
+ eine Lipschitz-Konstante von 
+\begin_inset Formula $f$
+\end_inset
+
+ bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ auf 
+\begin_inset Formula $U\cap K$
+\end_inset
+
+.
+ Es gilt 
+\begin_inset Formula $\left|f(t,x)-f(t,y)\right|\leq L\left|x-y\right|$
+\end_inset
+
+ für alle 
+\begin_inset Formula $(t,x),(t,y)\in U\cap K$
+\end_inset
+
+.
+ Für hinreichend großes 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ gilt 
+\begin_inset Formula $(t_{n},x_{n}),(t_{n},y_{n})\in U\cap K$
+\end_inset
+
+, also 
+\begin_inset Formula 
+\[
+\left|f(t_{n},x_{n})-f(t_{n},y_{n})\right|\leq L\left|x_{n}-y_{n}\right|
+\]
+
+\end_inset
+
+im Widerspruch zur Annahme.
+\end_layout
+
+\end_deeper
+\begin_layout Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:2.8"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "lem:gronwall"
+
+\end_inset
+
+(Gronwall) Sei 
+\begin_inset Formula $J\subseteq\mathbb{R}$
+\end_inset
+
+ ein Intervall mit 
+\begin_inset Formula $t_{0}\in J$
+\end_inset
+
+, 
+\begin_inset Formula $u:J\to\mathbb{R}$
+\end_inset
+
+ sei stetig und nichtnegativ.
+ Seien ferner 
+\begin_inset Formula $C$
+\end_inset
+
+ und 
+\begin_inset Formula $K$
+\end_inset
+
+ nichtnegative reelle Zahlen.
+ Dann folgt aus der impliziten Abschätzung 
+\begin_inset Formula 
+\[
+u(t)\leq C+K\left|\int_{t_{0}}^{t}u(s)ds\right|\qquad\forall_{t\in J}
+\]
+
+\end_inset
+
+die explizite Abschätzung 
+\begin_inset Formula 
+\[
+u(t)\leq C\cdot e^{K\left|t-t_{0}\right|}\qquad\forall_{t\in J}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Wir zeigen die Behauptung für alle 
+\begin_inset Formula $t\in J$
+\end_inset
+
+ mit 
+\begin_inset Formula $t\geq t_{0}$
+\end_inset
+
+, den Fall 
+\begin_inset Formula $t\leq t_{0}$
+\end_inset
+
+ behandelt man analog.
+ Zunächst sei 
+\begin_inset Formula $C>0$
+\end_inset
+
+.
+ Die Funktion 
+\begin_inset Formula $v(t):=C+K\int_{t_{0}}^{t}u(s)ds$
+\end_inset
+
+ ist dann positiv für alle 
+\begin_inset Formula $t\in J$
+\end_inset
+
+ mit 
+\begin_inset Formula $t\geq t_{0}$
+\end_inset
+
+.
+ Es gilt 
+\begin_inset Formula $v'(t)=Ku(t)$
+\end_inset
+
+.
+ Nach Voraussetzung gilt 
+\begin_inset Formula $u(t)\leq v(t)$
+\end_inset
+
+, d.h.
+ 
+\begin_inset Formula 
+\[
+\frac{\partial}{\partial t}\log v(t)=\frac{v'(t)}{v(t)}=\frac{Ku(t)}{v(t)}\leq K,
+\]
+
+\end_inset
+
+also durch Integration 
+\begin_inset Formula 
+\[
+\log v(t)\leq\log v(t_{0})+K(t-t_{0}).
+\]
+
+\end_inset
+
+Wegen 
+\begin_inset Formula $v(t_{0})=C$
+\end_inset
+
+ erhalten wir hieraus 
+\begin_inset Formula 
+\[
+v(t)\leq Ce^{K(t-t_{0})},
+\]
+
+\end_inset
+
+d.h.
+ 
+\begin_inset Formula $u(t)\leq Ce^{K(t-t_{0})}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Falls 
+\begin_inset Formula $C=0$
+\end_inset
+
+ betrachten wir 
+\begin_inset Formula $v_{j}(t)=\frac{1}{j}+K\int_{t_{0}}^{t}u(s)ds\geq u(t)$
+\end_inset
+
+, 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+.
+ Nach dem bereits Bewiesenem gilt 
+\begin_inset Formula 
+\[
+u(t)\leq v_{j}(t)\leq\frac{1}{j}e^{K(t-t_{0})}
+\]
+
+\end_inset
+
+für alle 
+\begin_inset Formula $j\in\mathbb{N}$
+\end_inset
+
+, also 
+\begin_inset Formula $u(t)\leq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:2.9"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:globaler-eindeutigkeitssatz"
+
+\end_inset
+
+(Globaler Eindeutigkeitssatz) Sei 
+\begin_inset Formula $J\subseteq\mathbb{R}$
+\end_inset
+
+ ein Intervall, 
+\begin_inset Formula $D\subseteq\mathbb{K}^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $f:J\times D\to\mathbb{K}^{n}$
+\end_inset
+
+ sei stetig und Lipschitz-stetig bezüglich 
+\begin_inset Formula $x\in D$
+\end_inset
+
+.
+ Seien 
+\begin_inset Formula $x_{1}:I_{1}\to D$
+\end_inset
+
+ und 
+\begin_inset Formula $x_{2}:I_{2}\to D$
+\end_inset
+
+ zwei Lösungen von der Differentialgleichung 
+\begin_inset Formula 
+\[
+x'=f(t,x).
+\]
+
+\end_inset
+
+Falls 
+\begin_inset Formula $x_{1}(t_{0})=x_{2}(t_{0})$
+\end_inset
+
+ für ein 
+\begin_inset Formula $t_{0}\in I_{1}\cap I_{2}$
+\end_inset
+
+, dann gilt 
+\begin_inset Formula $x_{1}(t)=x_{2}(t)$
+\end_inset
+
+ für alle 
+\begin_inset Formula $t\in I_{1}\cap I_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Sei 
+\begin_inset Formula $I':=I_{1}\cap I_{2}$
+\end_inset
+
+.
+ Betrachte 
+\begin_inset Formula $\Delta(t):=\left|x_{1}(t)-x_{2}(t)\right|$
+\end_inset
+
+ und nimm an 
+\begin_inset Formula $\Delta(t')>0$
+\end_inset
+
+ für ein 
+\begin_inset Formula $t'\in I'$
+\end_inset
+
+.
+ Ohne Einschränkung sei 
+\begin_inset Formula $t'>t_{0}$
+\end_inset
+
+.
+ Ferner bezeichne 
+\begin_inset Formula $t_{0}'$
+\end_inset
+
+ die größte Nullstelle der stetigen Funktion 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ in 
+\begin_inset Formula $[t_{0},t')$
+\end_inset
+
+.
+ Dann gilt 
+\begin_inset Formula $\Delta(t_{0}')=0$
+\end_inset
+
+ und 
+\begin_inset Formula $\Delta(t)>0$
+\end_inset
+
+ für alle 
+\begin_inset Formula $t\in(t_{0}',t')$
+\end_inset
+
+.
+ Es gibt eine Umgebung 
+\begin_inset Formula $U$
+\end_inset
+
+ von 
+\begin_inset Formula $(t_{0}',x_{1}(t_{0}'))$
+\end_inset
+
+, so dass 
+\begin_inset Formula $f$
+\end_inset
+
+ auf 
+\begin_inset Formula $U\cap I'\times D$
+\end_inset
+
+ einer Lipschitz-Bedingung bezüglich 
+\begin_inset Formula $x$
+\end_inset
+
+ mit der Lipschitz-Konstanten 
+\begin_inset Formula $L>0$
+\end_inset
+
+ genügt.
+ Da man für 
+\begin_inset Formula $t\in[t_{0}',t_{0}'+\delta)$
+\end_inset
+
+ sicher 
+\begin_inset Formula $(t,x_{1}(t)),(t,x_{2}(t))\in U$
+\end_inset
+
+ erreichen kann (
+\begin_inset Formula $\delta>0$
+\end_inset
+
+ hinreichend klein wählen!), erhält man unter Berücksichtigung von 
+\begin_inset Formula 
+\begin{eqnarray*}
+x_{j}(t) & = & x_{j}(t_{0}')+\int_{t_{0}'}^{t}x_{j}'(s)ds\\
+ & = & x_{j}(t_{0}')+\int_{t_{0}'}^{t}f(s,x_{j}(s))ds
+\end{eqnarray*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $j=1,2$
+\end_inset
+
+ und 
+\begin_inset Formula $t\in I'$
+\end_inset
+
+ sowie unter Berücksichtigung von 
+\begin_inset Formula $x_{1}(t_{0}')=x_{2}(t_{0}')$
+\end_inset
+
+ die Abschätzung 
+\begin_inset Formula 
+\begin{eqnarray*}
+\Delta(t) & = & \left|x_{1}(t)-x_{2}(t)\right|=\left|\int_{t_{0}'}^{t}\left(f(s,x_{1}(s))-f(s,x_{s}(s))\right)ds\right|\\
+ & \leq & L\int_{t_{0}'}^{t}\left|x_{1}(s)-x_{2}(s)\right|ds\\
+ & = & L\cdot\int_{t_{0}'}^{t}\Delta(s)ds
+\end{eqnarray*}
+
+\end_inset
+
+für alle 
+\begin_inset Formula $t\in[t_{0}',t_{0}'+\delta)$
+\end_inset
+
+.
+ Gronwall impliziert nun 
+\begin_inset Formula $\Delta(t)=0$
+\end_inset
+
+ für alle 
+\begin_inset Formula $t\in[t_{0}',t_{0}'+\delta)$
+\end_inset
+
+, was aber der Definition von 
+\begin_inset Formula $t_{0}'$
+\end_inset
+
+ widerspricht.
 \end_layout
 
 \end_body
